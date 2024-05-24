@@ -1,5 +1,7 @@
-name: select_dialog
+name: find_dropdown
+description: Simple and robust FindDropdown with item search feature, making it possible to use an offline item list or filtering URL for easy customization.
 version: 3.0.0
+homepage: https://github.com/aweiand/find_dropdown
 
 environment:
   sdk: '>=3.4.1 <4.0.0'
