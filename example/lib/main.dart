@@ -1,6 +1,6 @@
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
-import 'package:select_dialog/select_dialog.dart';
+import 'package:find_dropdown/select_dialog.dart';
 
 import 'user_model.dart';
 
@@ -35,7 +35,7 @@ class _MyHomePageState extends State<MyHomePage> {
     50,
     (index) => UserModel(
       avatar: "https://i.imgur.com/lTy4hiN.jpg",
-      name: "Deivão $index",
+      name: "Master $index",
       id: "$index",
       createdAt: DateTime.now(),
     ),
