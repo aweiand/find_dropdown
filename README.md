@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # select_dialog Package
 
 Package designed to select an item from a list, with the option to filter and even search the items online.
@@ -33,76 +32,6 @@ SelectDialog.showModal<String>(
     setState(() {
       ex1 = selected;
     });
-=======
-[![Buy Me A Coffee](https://img.shields.io/badge/Donate-Buy%20Me%20A%20Coffee-yellow.svg)](https://www.buymeacoffee.com/deivao)
-
-# FindDropdown package - [[ver em português](https://github.com/davidsdearaujo/find_dropdown/blob/master/README-PT.md)]
-
-Simple and robust FindDropdown with item search feature, making it possible to use an offline item list or filtering URL for easy customization.
-
-![](https://github.com/davidsdearaujo/find_dropdown/blob/master/screenshots/Screenshot_4.png?raw=true)
-
-<img src="https://github.com/davidsdearaujo/find_dropdown/blob/master/screenshots/GIF_Simple.gif?raw=true" width="49.5%" /> <img src="https://github.com/davidsdearaujo/find_dropdown/blob/master/screenshots/GIF_Custom_Layout.gif?raw=true" width="49.5%" />
-<img src="https://user-images.githubusercontent.com/16373553/94360038-f0c22000-0080-11eb-8687-d5e8af02ed7b.png" width="49.5%" />
-
-
-
-## ATTENTION
-If you use rxdart in your project in a version lower than 0.23.x, use version `0.1.7+1` of this package. Otherwise, you can use the most current version!
-
-## Versions
-**Null Safety Version**: 1.0.0 or more
-
-**Non Null Safety Version**: 0.2.3 or less
-
-**RxDart 0.23.x or less**: 0.1.7+1
-
-## packages.yaml
-```yaml
-find_dropdown: <lastest version>
-```
-
-## Import
-```dart
-import 'package:find_dropdown/find_dropdown.dart';
-```
-
-## Simple implementation
-
-```dart
-FindDropdown(
-  items: ["Brasil", "Itália", "Estados Unidos", "Canadá"],
-  label: "País",
-  onChanged: (String item) => print(item),
-  selectedItem: "Brasil",
-);
-```
-
-## Multiple selectable items
-```dart
-FindDropdown<String>.multiSelect(
-  items: ["Brasil", "Itália", "Estados Unidos", "Canadá"],
-  label: "País",
-  onChanged: (List<String> items) => print(items),
-  selectedItems: ["Brasil"],
-);
-```
-
-## Validation
-```dart
-FindDropdown(
-  items: ["Brasil", "Itália", "Estados Unidos", "Canadá"],
-  label: "País",
-  onChanged: (String item) => print(item),
-  selectedItem: "Brasil",
-  validate: (String item) {
-    if (item == null)
-      return "Required field";
-    else if (item == "Brasil")
-      return "Invalid item";
-    else
-      return null; //return null to "no error"
->>>>>>> 6ea7619b0c4855f116e03dd3710624c9481936c2
   },
 );
 ```
