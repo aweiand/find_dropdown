@@ -36,6 +36,7 @@ SelectDialog.showModal<String>(
 );
 ```
 
+<<<<<<< HEAD
 ## Multiple items select
 ```dart
 List<String> ex5 = [];
@@ -55,6 +56,94 @@ SelectDialog.showModal<String>(
 
 ### [MORE EXAMPLES](https://github.com/davidsdearaujo/select_dialog/tree/master/example)
 
+=======
+
+## Endpoint implementation (using [Dio package](https://pub.dev/packages/dio))
+```dart
+FindDropdown<UserModel>(
+  label: "Nome",
+  onFind: (String filter) async {
+    var response = await Dio().get(
+        "http://5d85ccfb1e61af001471bf60.mockapi.io/user",
+        queryParameters: {"filter": filter},
+    );
+    var models = UserModel.fromJsonList(response.data);
+    return models;
+  },
+  onChanged: (UserModel data) {
+    print(data);
+  },
+);
+```
+
+## Clear selected items
+```dart
+var countriesKey = GlobalKey<FindDropdownState>();
+
+Column(
+  children: [
+    FindDropdown<String>(
+      key: countriesKey,
+      items: ["Brasil", "Itália", "Estados Unidos", "Canadá"],
+      label: "País",
+      selectedItem: "Brasil",
+      showSearchBox: false,
+      onChanged: (selectedItem) => print("country: $selectedItem"),
+    ),
+    RaisedButton(
+      child: Text('Limpar Países'),
+      color: Theme.of(context).primaryColor,
+      textColor: Theme.of(context).primaryIconTheme.color,
+      onPressed: () => countriesKey.currentState?.clear(),
+    ),
+  ],
+)
+``` 
+
+## Change selected items
+```dart
+var countriesKey = GlobalKey<FindDropdownState>();
+
+Column(
+  children: [
+    FindDropdown<UserModel>(
+      label: "Nome",
+      onFind: (String filter) => getData(filter),
+      searchBoxDecoration: InputDecoration(
+        hintText: "Search",
+        border: OutlineInputBorder(),
+      ),
+      onChanged: (UserModel data) {
+        print(data);
+        countriesKey.currentState.setSelectedItem("Brasil");
+      },
+    ),
+    FindDropdown<String>(
+      key: countriesKey,
+      items: ["Brasil", "Itália", "Estados Unidos", "Canadá"],
+      label: "País",
+      selectedItem: "Brasil",
+      showSearchBox: false,
+      onChanged: (selectedItem) => print("country: $selectedItem"),
+    ),
+  ],
+)
+``` 
+
+### [MORE EXAMPLES](https://github.com/davidsdearaujo/find_dropdown/tree/master/example)
+
+## Layout customization
+You can customize the layout of the FindDropdown and its items. [EXAMPLE](https://github.com/davidsdearaujo/find_dropdown/tree/master/example#custom-layout-endpoint-example)
+
+To **customize the FindDropdown**, we have the `dropdownBuilder` property, which takes a function with the parameters:
+- `BuildContext context`: current context;
+- `T item`: Current item, where **T** is the type passed in the FindDropdown constructor.
+
+To **customize the items**, we have the `dropdownItemBuilder` property, which takes a function with the parameters:
+- `BuildContext context`: current context;
+- `T item`: Current item, where **T** is the type passed in the FindDropdown constructor.
+- `bool isSelected`: Boolean that tells you if the current item is selected.
+>>>>>>> 6ea7619b0c4855f116e03dd3710624c9481936c2
 
 # Attention
 To use a template as an item type, you need to implement **toString**, **equals** and **hashcode**, as shown below:
@@ -79,6 +168,7 @@ class UserModel {
 
 }
 ```
+<<<<<<< HEAD
 
 
 ## Getting Started
@@ -91,3 +181,5 @@ multiple Flutter or Dart projects.
 For help getting started with Flutter, view our 
 [online documentation](https://flutter.dev/docs), which offers tutorials, 
 samples, guidance on mobile development, and a full API reference.
+=======
+>>>>>>> 6ea7619b0c4855f116e03dd3710624c9481936c2

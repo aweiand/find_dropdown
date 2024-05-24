@@ -1,4 +1,11 @@
 {
+<<<<<<< HEAD
     "dart.lineLength": 0,
     "editor.rulers": []
+=======
+    "dart.lineLength": 140,
+    "editor.rulers": [
+        140
+    ]
+>>>>>>> 6ea7619b0c4855f116e03dd3710624c9481936c2
 }

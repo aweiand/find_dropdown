@@ -1,3 +1,6 @@
+# [3.0.0] - 2024.05.23
+* Flutter 3.4.1 compatibility
+
 # [2.0.1] - 2023.08.29
 * Flutter 3.13.0 compatibility
 

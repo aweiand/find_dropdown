@@ -1,8 +1,7 @@
-name: select_dialog
-description: Package designed to select an item from a list, with the option to filter and even search the items online.
+name: find_dropdown
+description: Simple and robust FindDropdown with item search feature, making it possible to use an offline item list or filtering URL for easy customization.
 version: 3.0.0
-git: https://github.com/aweiand/find_dropdown
-repository: https://github.com/aweiand/find_dropdown
+homepage: https://github.com/aweiand/find_dropdown
 
 environment:
   sdk: '>=3.4.1 <4.0.0'
