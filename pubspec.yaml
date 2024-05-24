@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 name: select_dialog
 version: 3.0.0
 
@@ -45,3 +46,33 @@ flutter:
   #
   # For details regarding fonts in packages, see
   # https://flutter.dev/custom-fonts/#from-packages
+=======
+name: find_dropdown
+description: Simple and robust FindDropdown with item search feature, making it possible to use an offline item list or filtering URL for easy customization.
+version: 1.0.1-beta.3
+homepage: https://flutterando.com.br/
+git: https://github.com/davidsdearaujo/find_dropdown
+repository: https://github.com/davidsdearaujo/find_dropdown
+
+environment:
+  sdk: ">=2.12.0 <3.0.0"
+
+dependencies:
+  select_dialog: ^2.0.1
+  flutter:
+    sdk: flutter
+
+# dependency_overrides:
+#   select_dialog: 
+#     git:
+#       url: https://github.com/davidsdearaujo/select_dialog.git
+#   select_dialog:
+#     path: C:\projects\packages\select_dialog
+
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+flutter:
+>>>>>>> 6ea7619b0c4855f116e03dd3710624c9481936c2

@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 allprojects {
     repositories {
         google()
@@ -6,13 +7,43 @@ allprojects {
 }
 
 rootProject.buildDir = "../build"
+=======
+buildscript {
+    ext.kotlin_version = '1.2.71'
+    repositories {
+        google()
+        jcenter()
+    }
+
+    dependencies {
+        classpath 'com.android.tools.build:gradle:3.2.1'
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+    }
+}
+
+allprojects {
+    repositories {
+        google()
+        jcenter()
+    }
+}
+
+rootProject.buildDir = '../build'
+>>>>>>> 6ea7619b0c4855f116e03dd3710624c9481936c2
 subprojects {
     project.buildDir = "${rootProject.buildDir}/${project.name}"
 }
 subprojects {
+<<<<<<< HEAD
     project.evaluationDependsOn(":app")
 }
 
 tasks.register("clean", Delete) {
+=======
+    project.evaluationDependsOn(':app')
+}
+
+task clean(type: Delete) {
+>>>>>>> 6ea7619b0c4855f116e03dd3710624c9481936c2
     delete rootProject.buildDir
 }

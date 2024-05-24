@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 class UserModel {
   final String? id;
   final DateTime? createdAt;
@@ -5,6 +6,17 @@ class UserModel {
   final String? avatar;
 
   UserModel({this.id, this.createdAt, required this.name, this.avatar});
+=======
+//Created on http://app.quicktype.io/
+
+class UserModel {
+  final String id;
+  final DateTime? createdAt;
+  final String name;
+  final String avatar;
+
+  UserModel({required this.id, required this.createdAt, required this.name, required this.avatar});
+>>>>>>> 6ea7619b0c4855f116e03dd3710624c9481936c2
 
   factory UserModel.fromJson(Map<String, dynamic> json) {
     return UserModel(
@@ -20,7 +32,11 @@ class UserModel {
   }
 
   @override
+<<<<<<< HEAD
   String toString() => "$name";
+=======
+  String toString() => name;
+>>>>>>> 6ea7619b0c4855f116e03dd3710624c9481936c2
 
   @override
   operator ==(o) => o is UserModel && o.id == id;
