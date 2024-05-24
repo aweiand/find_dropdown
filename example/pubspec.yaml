@@ -1,0 +1,25 @@
+name: example
+description: A new Flutter project.
+publish_to: "none"
+
+version: 2.0.0+2
+
+environment:
+  sdk: '>=3.4.1 <4.0.0'
+
+dependencies:
+  dio: ^4.0.0-beta6
+  flutter:
+    sdk: flutter
+
+  select_dialog:
+    path: ../
+  cupertino_icons: ^1.0.5
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+
+flutter:
+  uses-material-design: true
