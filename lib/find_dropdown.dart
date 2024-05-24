@@ -180,7 +180,7 @@ class FindDropdownState<T> extends State<FindDropdown<T>> {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: <Widget>[
         if (widget.label != null && widget.labelVisible)
-          Text(widget.label!, style: widget.labelStyle ?? Theme.of(context).textTheme.subtitle1),
+          Text(widget.label!, style: widget.labelStyle ?? Theme.of(context).textTheme.titleMedium),
         if (widget.label != null) SizedBox(height: 5),
         Column(
           mainAxisSize: MainAxisSize.min,

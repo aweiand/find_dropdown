@@ -17,7 +17,7 @@ class ValidationMessageWidget extends StatelessWidget {
             padding: const EdgeInsets.all(5),
             child: Text(
               snapshot.data ?? "",
-              style: Theme.of(context).textTheme.bodyText2?.copyWith(color: snapshot.hasData ? Theme.of(context).errorColor : Colors.transparent),
+              style: Theme.of(context).textTheme.bodyMedium?.copyWith(color: snapshot.hasData ? Theme.of(context).secondary : Colors.transparent),
             ),
           ),
         );
