@@ -1,9 +1,9 @@
 library find_dropdown;
 
 import 'package:flutter/material.dart';
-import 'package:select_dialog/select_dialog.dart';
 
 import 'find_dropdown_bloc.dart';
+import 'select_dialog.dart';
 import 'validation_message_widget.dart';
 
 typedef Future<List<T>> FindDropdownFindType<T>(String text);

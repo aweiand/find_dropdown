@@ -10,11 +10,6 @@ dependencies:
   flutter:
     sdk: flutter
 
-  select_dialog:
-    git:
-      url: git@github.com:aweiand/find_dropdown.git
-      ref: select_dialog
-
 dev_dependencies:
   test: ^1.25.2
 
