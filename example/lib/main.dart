@@ -1,10 +1,6 @@
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
-<<<<<<< HEAD
 import 'package:select_dialog/select_dialog.dart';
-=======
-import 'package:find_dropdown/find_dropdown.dart';
->>>>>>> 6ea7619b0c4855f116e03dd3710624c9481936c2
 
 import 'user_model.dart';
 
@@ -27,7 +23,6 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-<<<<<<< HEAD
   String? ex1;
   String? ex2;
   UserModel? ex3;
@@ -196,155 +191,17 @@ class _MyHomePageState extends State<MyHomePage> {
               ),
             ],
           ),
-=======
-  var countriesKey = GlobalKey<FindDropdownState>();
-  var nameKey = GlobalKey<FindDropdownState>();
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(title: Text("FindDropdown Example")),
-      body: Padding(
-        padding: const EdgeInsets.all(25),
-        child: Column(
-          children: <Widget>[
-            FindDropdown(
-              items: ["Brasil", "Itália", "Estados Unidos", "Canadá"],
-              label: "País",
-              onChanged: (item) {
-                print(item);
-                countriesKey.currentState?.setSelectedItem(<String>[]);
-              },
-              selectedItem: "Brasil",
-              showSearchBox: false,
-              labelStyle: TextStyle(color: Colors.blue),
-              backgroundColor: Colors.redAccent,
-              titleStyle: TextStyle(color: Colors.greenAccent),
-              validate: (String? item) {
-                if (item == null)
-                  return "Required field";
-                else if (item == "Brasil")
-                  return "Invalid item";
-                else
-                  return null;
-              },
-            ),
-            FindDropdown<String>.multiSelect(
-              key: countriesKey,
-              items: ["Brasil", "Itália", "Estados Unidos", "Canadá"],
-              label: "Países",
-              selectedItems: ["Brasil"],
-              onChanged: (selectedItems) => print("countries: $selectedItems"),
-              showSearchBox: false,
-              labelStyle: TextStyle(color: Colors.blue),
-              titleStyle: TextStyle(color: Colors.green),
-              dropdownItemBuilder: (context, item, isSelected) {
-                return ListTile(
-                  title: Text(item.toString()),
-                  trailing: isSelected ? Icon(Icons.check) : null,
-                  selected: isSelected,
-                );
-              },
-              okButtonBuilder: (context, onPressed) {
-                return Align(
-                  alignment: Alignment.centerRight,
-                  child: FloatingActionButton(child: Icon(Icons.check), onPressed: onPressed, mini: true),
-                );
-              },
-              validate: (List<String>? items) {
-                print("VALIDATION: $items");
-                String? response;
-                if (items == null || items.isEmpty) {
-                  response = "Required field";
-                } else if (items.contains("Brasil")) {
-                  response = "'Brasil' não pode ser selecionado.";
-                }
-                print(response);
-                return response;
-              },
-            ),
-            FindDropdown<UserModel>(
-              key: nameKey,
-              label: "Nome",
-              onFind: (String filter) => getData(filter),
-              searchBoxDecoration: InputDecoration(hintText: "Search", border: OutlineInputBorder()),
-              onChanged: (UserModel? data) => print(data),
-            ),
-            SizedBox(height: 25),
-            FindDropdown<UserModel>(
-              label: "Personagem",
-              onFind: (String filter) => getData(filter),
-              onChanged: (UserModel? data) => print(data),
-              dropdownBuilder: (BuildContext context, UserModel? item) {
-                return Container(
-                  decoration: BoxDecoration(
-                    border: Border.all(color: Theme.of(context).dividerColor),
-                    borderRadius: BorderRadius.circular(5),
-                    color: Colors.white,
-                  ),
-                  child: (item?.avatar == null)
-                      ? ListTile(leading: CircleAvatar(), title: Text("No item selected"))
-                      : ListTile(
-                          leading: CircleAvatar(backgroundImage: NetworkImage(item!.avatar)),
-                          title: Text(item.name),
-                          subtitle: Text(item.createdAt.toString()),
-                        ),
-                );
-              },
-              dropdownItemBuilder: (BuildContext context, UserModel item, bool isSelected) {
-                return Container(
-                  decoration: !isSelected
-                      ? null
-                      : BoxDecoration(
-                          border: Border.all(color: Theme.of(context).primaryColor),
-                          borderRadius: BorderRadius.circular(5),
-                          color: Colors.white,
-                        ),
-                  child: ListTile(
-                    selected: isSelected,
-                    title: Text(item.name),
-                    subtitle: Text(item.createdAt.toString()),
-                    leading: CircleAvatar(backgroundImage: NetworkImage(item.avatar)),
-                  ),
-                );
-              },
-            ),
-            SizedBox(height: 25),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                RaisedButton(
-                    child: Text('Limpar Países'),
-                    color: Theme.of(context).primaryColor,
-                    textColor: Theme.of(context).primaryIconTheme.color,
-                    onPressed: () => countriesKey.currentState?.clear()),
-                SizedBox(width: 25),
-                RaisedButton(
-                    child: Text('Limpar Nome'),
-                    color: Theme.of(context).primaryColor,
-                    textColor: Theme.of(context).primaryIconTheme.color,
-                    onPressed: () => nameKey.currentState?.clear()),
-              ],
-            ),
-          ],
->>>>>>> 6ea7619b0c4855f116e03dd3710624c9481936c2
         ),
       ),
     );
   }
 
-<<<<<<< HEAD
   Future<List<UserModel>> getData(String filter) async {
     var response = await Dio().get(
       "http://5d85ccfb1e61af001471bf60.mockapi.io/user",
       queryParameters: {
         "filter": filter
       },
-=======
-  Future<List<UserModel>> getData(filter) async {
-    var response = await Dio().get(
-      "http://5d85ccfb1e61af001471bf60.mockapi.io/user",
-      queryParameters: {"filter": filter},
->>>>>>> 6ea7619b0c4855f116e03dd3710624c9481936c2
     );
 
     var models = UserModel.fromJsonList(response.data);
